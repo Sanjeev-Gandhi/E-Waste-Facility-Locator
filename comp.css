@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url('img.jpg') no-repeat;
+  background-size: cover;
+  font-family: sans-serif;
+}
+.menu-bar {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ff652f;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.company-name {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.image-container img {
+    max-width: 900%; /* Increase the size here */
+    margin: 85px;
+  }
+.summary {
+    text-align: center; /* Center align the button and summary text */
+    margin-top: 20px; /* Adjust the margin for spacing */
+    margin-left: -1%;
+  }
+  
+  #submit-button {
+    background-color: #ff652f; /* Background color for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 18px; /* Font size for the button text */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect on hover */
+  }
+  
+  #submit-button:hover {
+    background-color: #e04e24; /* Change the background color on hover */
+  }
+
+  #summary-text {
+    font-size: 90px;
+    margin-top: 85px; /* Adjust the margin for spacing */
+  }
+
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+  }
+  
+  .product {
+    text-align: center;
+    margin: 15px; /* Adjust the margin for spacing between products */
+    flex: 0 0 calc(33.33% - 30px); /* Adjust the width based on the number of products per row */
+  }
+  
+  .product img {
+    max-width: 100%; /* Keep the image within the product container */
+  }
+  
+  .product p {
+    font-size: 16px;
+    margin-top: 10px; /* Add space between the image and the product name */
+  }
+  

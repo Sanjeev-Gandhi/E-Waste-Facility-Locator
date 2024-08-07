@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="sum.css">
+</head>
+<body>
+  <div class="menu-bar">
+    <div class="company-name">SUMMARY OF E WASTE</div>
+  </div>
+  <div id="summary"></div>
+  
+  <script>
+    // Retrieve the selected products from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedProducts = urlParams.get('selectedProducts');
+  
+    // Display the selected products on the summary page
+    if (selectedProducts) {
+      const summaryElement = document.getElementById('summary');
+      const productList = selectedProducts.split(','); // Split the products by comma
+  
+      productList.forEach((product) => {
+        const productItem = document.createElement('p');
+        productItem.textContent = product;
+        summaryElement.appendChild(productItem);
+      });
+    }
+  
+    // Button click event handlers (you can add functionality to these buttons here)
+    document.getElementById('locationButton').addEventListener('click', () => {
+      // Handle the "Location" button click
+      alert('Location button clicked');
+    });
+  
+    document.getElementById('buyButton').addEventListener('click', () => {
+      // Handle the "Buy" button click
+      alert('Buy button clicked');
+    });
+  
+    document.getElementById('sellButton').addEventListener('click', () => {
+      // Handle the "Sell" button click
+      alert('Sell button clicked');
+    });
+  </script>
+  <div class="loc">
+    <button id="locationButton">
+      <a href="https://www.google.com/maps/@11.2741843,77.6070381,17z?entry=ttu" class="link" target="_blank">LOCATION</a>
+    </button>    
+  <button id="buyButton">REUSE</button>
+  <button id="sellButton">DISPOSE</button></div>
+</body>
+</html>

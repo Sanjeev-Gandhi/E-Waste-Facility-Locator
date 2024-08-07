@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Selection</title>
+  <link rel="stylesheet" href="comp.css">
+  <style>
+    /* Add this CSS to style the selected images */
+    .product.selected img {
+      border: 3px solid #ff652f; /* Highlight selected images with a border */
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-bar">
+    <div class="company-name">HAVELLS INDIA</div>
+  </div>
+
+  <div class="image-container">
+    <div class="product">
+      <img src="havells 1.jpg" alt="CHARGER" width="350"height="250">
+      <p>CHARGER</p>
+    </div>
+    <div class="product">
+      <img src="havells 8.jpg" alt="WATER HEATER" width="350"height="250">
+      <p>WATER HEATER</p>
+    </div>
+    <div class="product">
+      <img src="havells 6.jpg" alt="MCB" width="350"height="250">
+      <p>MCB</p>
+    </div>
+    <div class="product">
+      <img src="havells 7.jpg" alt="ELECTRICAL KETTLE" width="350"height="250">
+      <p>ELECTRICAL KETTLE</p>
+    </div>
+    <div class="product">
+      <img src="bajaj 2.jpg" alt="MAGNETIC COIL" width="350"height="250">
+      <p>MAGNETIC COIL</p>
+    </div>
+  </div>
+
+  <div class="summary">
+    <button id="submit-button">Submit</button>
+  </div>
+
+  <script>
+    const products = document.querySelectorAll('.product');
+    const selectedProducts = [];
+
+    products.forEach(product => {
+      product.addEventListener('click', () => {
+        product.classList.toggle('selected');
+        const altText = product.querySelector('img').alt;
+        if (selectedProducts.includes(altText)) {
+          selectedProducts.splice(selectedProducts.indexOf(altText), 1);
+        } else {
+          selectedProducts.push(altText);
+        }
+      });
+    });
+
+    document.getElementById('submit-button').addEventListener('click', () => {
+      // Encode the selected products for the URL
+      const selectedProductsParam = encodeURIComponent(selectedProducts.join(', '));
+
+      // Redirect to the summary page with the selected products in the query parameter
+      window.location.href = `summary.html?selectedProducts=${selectedProductsParam}`;
+    });
+  </script>
+</body>
+</html>
